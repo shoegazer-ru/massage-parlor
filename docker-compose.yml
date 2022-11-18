@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+    massage_parlor_nginx:
+        image: nginx:1.21.6
+        container_name: massage_parlor_nginx
+        restart: unless-stopped
+        networks:
+            - webstack_default
+        volumes:
+            - ./docker/conf.d:/etc/nginx/conf.d
+            - ./docker/logs/nginx:/var/log/nginx
+            - ./:/var/www
+        depends_on:
+            - massage_parlor_php
+
+    massage_parlor_php:
+        build:
+            context: .
+            dockerfile: docker/dockerfile.dev
+        container_name: massage_parlor_php
+        restart: unless-stopped
+        networks:
+            - webstack_default
+        volumes:
+            - ./:/var/www:rw
+
+    massage_parlor_mysql:
+        image: mysql:8.0
+        container_name: massage_parlor_mysql
+        restart: unless-stopped
+        ports:
+            - ${DB_EXTERNAL_PORT}:${DB_PORT}
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        networks:
+            - webstack_default
+        volumes:
+            - database_data:/var/lib/mysql:rw
+
+    massage_parlor_node:
+        container_name: massage_parlor_node
+        build: ./docker/nodejs
+        volumes:
+            - /etc/localtime:/etc/localtime
+            - ./:/var/www
+        restart: always
+        tty: true
+
+networks:
+    webstack_default:
+        external: true
+
+volumes:
+    database_data:

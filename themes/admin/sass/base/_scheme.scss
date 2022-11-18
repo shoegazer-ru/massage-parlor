@@ -1,0 +1,19 @@
+$font-family-default: arial;
+$font-weight-normal: normal;
+$font-size-default: 16px;
+$font-size-lesser: 14px;
+$font-size-caption: 20px;
+
+$color-default: #222;
+$color-negative: #fff;
+$color-link: rgb(16, 51, 165);
+$color-link-hover: lighten($color-link, 20%);
+$color-label: lighten($color-default, 20%);
+$color-border: lighten($color-default, 60%);
+$color-error: rgb(192, 68, 68);
+$color-message: rgb(39, 112, 39);
+
+$background-button: #f7f7f7;
+$background-button-hover: #f1f1f1;
+
+$margin-default: 20px;

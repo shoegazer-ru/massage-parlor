@@ -1,0 +1,74 @@
+@mixin box-shadow($attr) {
+    -webkit-box-shadow: $attr;
+    -moz-box-shadow: $attr;
+    -ms-box-shadow: $attr;
+    -o-box-shadow: $attr;
+    box-shadow: $attr;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin opacity($value) {
+    opacity: $value;
+    filter: alpha(opacity=$value * 100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$value*100);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value*100)";
+}
+
+@mixin text-clamp($lines) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin grayscalefull {
+    filter: url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg'&gt;&lt;filter id='grayscale'&gt;&lt;feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    animation: #{$str};
+}
+
+@mixin reset-button {
+    background: none;
+    border: none;
+}
+
+@mixin link-behavior {
+    &:hover {
+        color: $color-link-hover;
+    }
+    &:active {
+        color: $color-link-click;
+    }
+}
