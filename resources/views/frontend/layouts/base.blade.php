@@ -77,6 +77,7 @@
         </div>
     </footer>
 
+    <script src="{{ asset('lib/jquery/jquery-3.6.1.min.js') }}"></script>
     <script src="{{ asset('js/themes/base/base/main.js') }}"></script>
 </body>
 

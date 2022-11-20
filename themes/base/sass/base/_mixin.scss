@@ -120,3 +120,60 @@
         background-image: url(/images/instagram.png);
     }
 }
+
+@mixin popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+
+    .popup-close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 50px;
+        color: $color-negative;
+    }
+
+    .popup-container {
+        width: 560px;
+        margin: 100px auto;
+        background-color: #fff;
+    }
+
+    .popup-content {
+        padding: 40px 45px;
+    }
+
+    .popup-header {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+    .popup-body {
+        margin-bottom: 20px;
+
+        p,
+        a,
+        li {
+            font-size: 12px;
+        }
+    }
+
+    .popup-button {
+        @include border-button($color-default, $color-negative);
+    }
+
+    &.show {
+        display: block;
+    }
+}

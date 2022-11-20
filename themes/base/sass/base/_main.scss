@@ -249,3 +249,11 @@
         }
     }
 }
+
+.service-popup {
+    @include popup;
+
+    .service-info {
+        margin-bottom: 20px;
+    }
+}
