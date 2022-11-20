@@ -143,6 +143,15 @@
         color: $color-negative;
     }
 
+    .popup-scroller {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
     .popup-container {
         width: 560px;
         margin: 100px auto;
@@ -171,6 +180,127 @@
 
     .popup-button {
         @include border-button($color-default, $color-negative);
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+@mixin page-popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #fff;
+    z-index: 100;
+    display: none;
+
+    .popup-close-line {
+        margin-bottom: 40px;
+
+        button {
+            display: flex;
+            width: 100%;
+            height: 60px;
+            align-items: center;
+            justify-content: space-between;
+
+            .popup-close-button {
+                margin-left: auto;
+            }
+        }
+    }
+
+    .popup-back-button {
+        display: block;
+        margin-left: 20px;
+        font-size: 12px;
+
+        .arrow {
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    .popup-close-button {
+        display: block;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 50px;
+        font-family: "Times New Roman";
+    }
+
+    .popup-scroller {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .product-card {
+        display: flex;
+
+        .card-gallery {
+            flex: 1;
+
+            .gallery-bigs {
+                height: 480px;
+                padding: 40px;
+
+                img {
+                    display: block;
+                    height: 100%;
+                    margin: 0 auto;
+                }
+            }
+
+            .gallery-smalls {
+                button {
+                    width: 60px;
+                    height: 60px;
+                    padding: 5px 0;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+
+                    img {
+                        display: block;
+                        height: 100%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+
+        .card-info {
+            flex: 1;
+
+            .info-caption {
+                font-size: 24px;
+                line-height: 30px;
+                margin-bottom: 20px;
+            }
+
+            .info-buttons {
+                margin-bottom: 20px;
+
+                button {
+                    @include border-button($color-default, $color-negative);
+                    font-size: 12px;
+                }
+            }
+
+            .info-body {
+                p {
+                    margin-bottom: 20px;
+                    font-weight: $font-weight-light;
+                }
+            }
+        }
     }
 
     &.show {

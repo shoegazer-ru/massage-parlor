@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* admin */
+/** ADMIN **/
 
 Route::any('/admin', function () {
     if (Auth::user()) {
@@ -65,12 +65,17 @@ Route::middleware(['auth'])->group(function () {
     Route::any('/admin/fields/delete/{fieldName}/{modelId}', [FieldsController::class, 'delete'])->name('field.delete');
 });
 
-/* frontend */
+/** FRONTEND **/
 
 Route::get('/', function () {
     return view('frontend.index.index');
 });
 
+/* drafts */
+
 Route::get('/drafts/services', function () {
     return view('frontend.drafts.services');
+});
+Route::get('/drafts/products', function () {
+    return view('frontend.drafts.products');
 });

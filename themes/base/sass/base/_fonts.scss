@@ -8,6 +8,14 @@
 
 @font-face {
     font-family: "Open Sans";
+    src: local("Open Sans Light"),
+        url("/fonts/opensans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Open Sans";
     src: local("Open Sans Medium"),
         url("/fonts/opensans/OpenSans-Medium.ttf") format("truetype");
     font-weight: 500;
