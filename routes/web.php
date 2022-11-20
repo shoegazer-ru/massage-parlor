@@ -70,3 +70,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', function () {
     return view('frontend.index.index');
 });
+
+Route::get('/drafts/services', function () {
+    return view('frontend.drafts.services');
+});

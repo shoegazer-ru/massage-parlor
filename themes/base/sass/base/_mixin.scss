@@ -72,3 +72,51 @@
         color: $color-link-click;
     }
 }
+
+@mixin link-button($color, $color-hover) {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 30px;
+    border-radius: 20px;
+    color: $color;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background: $color;
+        color: $color-hover;
+    }
+}
+
+@mixin border-button($color, $color-hover) {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 30px;
+    border-radius: 20px;
+    border: 1px solid $color;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background: $color;
+        color: $color-hover;
+    }
+}
+
+@mixin social-icon {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    background-size: contain;
+    margin-right: 5px;
+
+    &.facebook {
+        background-image: url(/images/facebook.png);
+    }
+    &.vkontakte {
+        background-image: url(/images/vk.png);
+    }
+    &.instagram {
+        background-image: url(/images/instagram.png);
+    }
+}

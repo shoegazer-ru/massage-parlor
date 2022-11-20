@@ -5,6 +5,10 @@
 
 /* HEADER */
 
+.header-spacer {
+    height: 250px;
+}
+
 .page-header {
     position: absolute;
     top: 0;
@@ -41,5 +45,207 @@
         position: relative;
         height: 100%;
         background: rgba(55, 60, 58, 0.2);
+    }
+
+    .header-top {
+        height: 150px;
+        display: flex;
+        align-items: center;
+
+        .header-social {
+            flex: 1;
+
+            a {
+                @include social-icon;
+            }
+        }
+
+        .header-logo {
+            flex: 1;
+            text-align: center;
+
+            a {
+                font-size: 30px;
+                line-height: 30px;
+            }
+        }
+
+        .header-links {
+            flex: 1;
+            text-align: right;
+
+            a {
+                @include link-button($color-negative, $color-default);
+                margin-left: 10px;
+
+                &.appointment-link {
+                    @include border-button($color-negative, $color-default);
+                }
+            }
+        }
+    }
+
+    .header-delim {
+        height: 1px;
+        background-color: $color-negative;
+        opacity: 0.1;
+    }
+
+    .header-bottom {
+        display: flex;
+        height: 98px;
+        align-items: center;
+
+        .header-menu {
+            text-align: center;
+            flex: 1;
+        }
+    }
+
+    .header-menu {
+        a {
+            margin: 0 20px;
+            font-size: 13px;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+/* PAGE FOOTER */
+
+.page-footer {
+    padding: 45px 0;
+    background-color: #2b2b2b;
+    text-align: center;
+
+    a,
+    p,
+    li,
+    button {
+        color: $color-negative;
+    }
+
+    .footer-social {
+        margin-bottom: 30px;
+        a {
+            @include social-icon;
+            margin: 0 5px;
+        }
+    }
+
+    .footer-menu {
+        margin-bottom: 30px;
+        a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 11px;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .footer-agreement {
+        a {
+            font-size: 12px;
+            text-decoration: underline;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .footer-copyrights {
+        opacity: 0.7;
+    }
+}
+
+/* PAGE CONTENT */
+
+.page-content {
+}
+
+.page-menu {
+    background-color: rgba(144, 129, 117, 1);
+    text-align: center;
+
+    a {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 16px;
+        font-size: 13px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        color: $color-negative;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.page-gallery-background {
+    background: #ded9d0;
+}
+
+.page-services-list {
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .services-item {
+        width: 260px;
+        margin-bottom: 40px;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+
+            span {
+                display: block;
+            }
+        }
+
+        .service-container {
+            padding: 30px 30px 40px 30px;
+        }
+
+        .service-caption {
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .service-info {
+            margin-bottom: 20px;
+
+            span {
+                display: inline-block;
+            }
+        }
+
+        .service-button {
+            @include border-button($color-default, $color-negative);
+        }
     }
 }

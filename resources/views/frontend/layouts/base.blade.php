@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="header-spacer"></div>
     <main class="page-content">
         @yield('content')
     </main>
@@ -52,7 +53,28 @@
     </header>
 
     <footer class="page-footer">
-        
+        <div class="page-limiter">
+            <div class="footer-social">
+                <a href="" class="link-item facebook"></a>
+                <a href="" class="link-item vkontakte"></a>
+                <a href="" class="link-item instagram"></a>
+            </div>
+            <div class="footer-menu">
+                <a href="">Главная</a>
+                <a href="">Услуги</a>
+                <a href="">Продукция</a>
+                <a href="">Доставка</a>
+                <a href="">Отзывы</a>
+                <a href="">Команда</a>
+                <a href="">Контакты</a>
+            </div>
+            <div class="footer-agreement">
+                <a href="">Пользовательское соглашение</a>
+            </div>
+            <p class="footer-copyrights">
+                © 2022 MASSAGE PARLOR
+            </p>
+        </div>
     </footer>
 
     <script src="{{ asset('js/themes/base/base/main.js') }}"></script>
