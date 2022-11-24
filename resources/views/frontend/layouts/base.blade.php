@@ -77,6 +77,25 @@
         </div>
     </footer>
 
+    <button class="basket-shortcut">
+        <div class="shortcut-icon"></div>
+        <p class="shortcut-count"></p>
+    </button>
+
+    <div class="basket-popup">
+        <div class="popup-scroller">
+            <div class="popup-container">
+                <div class="popup-content">
+                    <p class="popup-header">Ваш Заказ:</p>
+                    <div class="basket-delim"></div>
+                    <div class="basket-items"></div>
+                    <div class="basket-delim"></div>
+                </div>
+            </div>
+        </div>
+        <button class="popup-close-button">&#215;</button>
+    </div>
+
     <script src="{{ asset('lib/jquery/jquery-3.6.1.min.js') }}"></script>
     <script src="{{ asset('js/themes/base/base/main.js') }}"></script>
 </body>

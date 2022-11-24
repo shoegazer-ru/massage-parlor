@@ -348,3 +348,113 @@
 .product-popup {
     @include page-popup;
 }
+
+.basket-shortcut {
+    position: fixed;
+    top: 120px;
+    right: 40px;
+
+    .shortcut-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .shortcut-count {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        background: #face88;
+    }
+
+    &.add-animation {
+        .shortcut-icon {
+            animation: 0.2s add-basket-item;
+            transform-origin: center;
+        }
+    }
+}
+
+.basket-popup {
+    @include popup;
+
+    .basket-delim {
+        margin: 20px 0;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .basket-items {
+        .basket-item {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            .item-image {
+                width: 80px;
+                height: 80px;
+                background: #eee;
+            }
+
+            .item-caption {
+                flex: 1;
+            }
+
+            .item-counter {
+                display: flex;
+                width: 100px;
+                flex-shrink: 0;
+                .value {
+                    margin: 0 10px;
+                }
+            }
+
+            .item-actions {
+                margin-left: auto;
+            }
+
+            .item-actions button,
+            .item-counter button {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 50%;
+                font-size: 14px;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+                }
+
+                &:active {
+                    border-color: rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+    }
+}
+
+@keyframes add-basket-item {
+    0% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -25,7 +25,7 @@
                         <p class="item-annotation">Hempz Original Herbal Body</p>
                         <div class="item-buttons">
                             <a href="" data-id="1">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"1", "caption":"Оригинальное увлажняющее молочко для тела", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <a href="" class="item-caption" data-id="2">Молочко увлажняющее для тела Молоко и мёд</a>
                         <div class="item-buttons">
                             <a href="" data-id="2">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"2", "caption":"Молочко увлажняющее для тела Молоко и мёд", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <p class="item-annotation">Hempz Original Herbal Body</p>
                         <div class="item-buttons">
                             <a href="" data-id="1">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"1", "caption":"Оригинальное увлажняющее молочко для тела", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <a href="" class="item-caption" data-id="2">Молочко увлажняющее для тела Молоко и мёд</a>
                         <div class="item-buttons">
                             <a href="" data-id="2">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"2", "caption":"Молочко увлажняющее для тела Молоко и мёд", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                         <p class="item-annotation">Hempz Original Herbal Body</p>
                         <div class="item-buttons">
                             <a href="" data-id="1">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"1", "caption":"Оригинальное увлажняющее молочко для тела", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         <a href="" class="item-caption" data-id="2">Молочко увлажняющее для тела Молоко и мёд</a>
                         <div class="item-buttons">
                             <a href="" data-id="2">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"2", "caption":"Молочко увлажняющее для тела Молоко и мёд", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <p class="item-annotation">Hempz Original Herbal Body</p>
                         <div class="item-buttons">
                             <a href="" data-id="1">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"1", "caption":"Оригинальное увлажняющее молочко для тела", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         <a href="" class="item-caption" data-id="2">Молочко увлажняющее для тела Молоко и мёд</a>
                         <div class="item-buttons">
                             <a href="" data-id="2">Подробнее</a>
-                            <button>В корзину</button>
+                            <button data-basket='{"id":"2", "caption":"Молочко увлажняющее для тела Молоко и мёд", "url":""}'>В корзину</button>
                         </div>
                     </div>
                 </div>
