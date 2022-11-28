@@ -87,9 +87,62 @@
             <div class="popup-container">
                 <div class="popup-content">
                     <p class="popup-header">Ваш Заказ:</p>
-                    <div class="basket-delim"></div>
-                    <div class="basket-items"></div>
-                    <div class="basket-delim"></div>
+                    <form action="">
+                        <div class="basket-delim"></div>
+                        <div class="basket-items"></div>
+                        <div class="basket-delim"></div>
+                        <div class="popup-body">
+                            <p>Ознакомитесь с условиями на странице доставки и оплаты или свяжитесь с нами любым из способов на странице контактной информации</p>
+                        </div>
+                        <div class="basket-form">
+                            <div class="form-field">
+                                <label for="" class="field-label">Ваше имя</label>
+                                <div class="field-control">
+                                    <input type="text" placeholder="Иван Иванов"/>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="" class="field-label">Телефон для связи</label>
+                                <div class="field-control">
+                                    <input type="text" placeholder="+7 999 999 99 99"/>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="" class="field-label">E-mail</label>
+                                <p class="field-note">Заполните, если хотите получить информацию о заказе</p>
+                                <div class="field-control">
+                                    <input type="text" placeholder="ivan@example.ru"/>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="" class="field-label">Способ доставки</label>
+                                <div class="field-control">
+                                    <div class="checkput-item">
+                                        <input type="radio" name="delivery-type" id="delivery-item-1">
+                                        <label for="delivery-item-1">Курьером по Екатеринбургу</label>
+                                    </div>
+                                    <div class="checkput-item">
+                                        <input type="radio" name="delivery-type" id="delivery-item-2">
+                                        <label for="delivery-item-2">Самовывоз</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="" class="field-label">Комментарий</label>
+                                <div class="field-control">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Адрес доставки или пожелания к заказу"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="field-control">
+                                    <button>Оформить заказ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-body">
+                            <p>Нажимая на кнопку, вы даете согласие на обработку своих персональных данных. Пользовательское соглашение</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

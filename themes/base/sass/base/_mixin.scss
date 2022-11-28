@@ -307,3 +307,70 @@
         display: block;
     }
 }
+
+@mixin form {
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    .field-label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .field-note {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    .field-control {
+        input,
+        textarea {
+            width: 100%;
+            height: 56px;
+            line-height: 56px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #eee;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 100px;
+            padding: 10px 20px;
+            line-height: 20px;
+        }
+
+        button {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #908175;
+            border-radius: 5px;
+            background: none;
+            text-align: center;
+            transition: background 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                background: #908175;
+                color: #fff;
+            }
+        }
+    }
+
+    .checkput-item {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 5px;
+
+        input {
+            width: 20px;
+            height: 20px;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
+}

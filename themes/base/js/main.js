@@ -192,6 +192,7 @@ function registerBasketHandlers() {
             let item = basketItems[id];
             itemsHtml += `
                 <div class="basket-item" data-id="${id}">
+                    <input type="hidden" name="basketItems[${id}]" value="${item.count}" />
                     <div class="item-image"></div>
                     <p class="item-caption">${item.caption}</p>
                     <div class="item-counter">

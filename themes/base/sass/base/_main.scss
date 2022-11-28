@@ -443,6 +443,10 @@
             }
         }
     }
+
+    .basket-form {
+        @include form;
+    }
 }
 
 @keyframes add-basket-item {
