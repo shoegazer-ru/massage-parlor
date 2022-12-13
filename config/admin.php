@@ -21,6 +21,12 @@ return [
                     'model' => 'section',
                     'field' => 'section_id'
                 ]
+            ],
+            'section' => [
+                'context' => [
+                    'model' => 'section',
+                    'field' => 'parent_id'
+                ]
             ]
         ]
     ]

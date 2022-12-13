@@ -182,6 +182,7 @@ return [
         'create' => 'Добавить',
         'edit' => 'Редактировать',
         'delete' => 'Удалить',
-        'publications' => 'Публикации'
+        'publications' => 'Публикации',
+        'subsections' => 'Подразделы'
     ]
 ];

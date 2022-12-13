@@ -185,9 +185,9 @@ class BreadcrumbsComponent implements BreadcrumbsComponentInterface
         $links = $this->getMainLinks();
 
         $context = config('admin.breadcrumbs.models.' . $modelName . '.context');
-        if ($context) {
+        if ($context && ($contextId = ($params[$context['field']] ?? null))) {
             $repository = $this->repositoryProvider->getRepository($context['model']);
-            $contextItem = $repository->getItem(['id' => $params[$context['field']]]);
+            $contextItem = $repository->getItem(['id' => $contextId]);
             if (!$contextItem) {
                 throw new AdminModelNotFoundException(__('admin.messages.model.context.not-found'));
             }
@@ -199,7 +199,7 @@ class BreadcrumbsComponent implements BreadcrumbsComponentInterface
 
         $routeParams = ['modelName' => $modelName];
         if ($context) {
-            $routeParams[$context['field']] = $params[$context['field']];
+            $routeParams[$context['field']] = $params[$context['field']] ?? null;
         }
 
         $links[] = new Link(

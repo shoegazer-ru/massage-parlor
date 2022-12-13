@@ -26,10 +26,14 @@ class ModelController extends Controller
             $model = $models->createModel($modelName, $input);
             return redirect()->route('model.edit', ['modelName' => $modelName, 'modelId' => $model->id]);
         }
+
+        $params = $request->all();
+        unset($params['q']);
+
         return view('admin.model.create', [
             'user' => Auth::user(),
             'modelName' => $modelName,
-            'sectionId' => $request->get('section_id')
+            'params' => $params
         ]);
     }
 
@@ -60,11 +64,15 @@ class ModelController extends Controller
                     break;
             }
         }
+
+        $params = $request->all();
+        unset($params['q']);
+
         return view('admin.model.edit', [
             'user' => Auth::user(),
             'modelName' => $modelName,
             'modelId' => $modelId,
-            'sectionId' => $request->get('section_id')
+            'params' => $params
         ]);
     }
 
@@ -83,11 +91,15 @@ class ModelController extends Controller
             $models->deleteModel($modelName, $modelId, $input);
             return redirect()->route('model.list', ['modelName' => $modelName]);
         }
+
+        $params = $request->all();
+        unset($params['q']);
+
         return view('admin.model.delete', [
             'user' => Auth::user(),
             'modelName' => $modelName,
             'modelId' => $modelId,
-            'sectionId' => $request->get('section_id')
+            'params' => $params
         ]);
     }
 

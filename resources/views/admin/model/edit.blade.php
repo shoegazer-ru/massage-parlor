@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('breadcrumbs')
-    @widget('app.admin.widgets.breadcrumbs', ['item' => 'model-editor', 'modelName' => $modelName, 'modelId' => $modelId, 'sectionId' => $sectionId])
+    @widget('app.admin.widgets.breadcrumbs', ['item' => 'model-editor', 'modelName' => $modelName, 'modelId' => $modelId, 'params' => $params])
 @endsection
 
 @section('content')

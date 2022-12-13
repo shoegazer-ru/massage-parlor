@@ -149,6 +149,10 @@ return [
         ],
         'section' => [
             'edit',
+            'subsections' => [
+                'route' => ['model.list', 'modelName' => 'section'],
+                'routeParams' => ['id' => 'parent_id']
+            ],
             'publications' => [
                 'route' => ['model.list', 'modelName' => 'publication'],
                 'routeParams' => ['id' => 'section_id']

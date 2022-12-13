@@ -6,7 +6,7 @@ services:
         container_name: massage_parlor_nginx
         restart: unless-stopped
         networks:
-            - webstack_default
+            - docker_default
         volumes:
             - ./docker/conf.d:/etc/nginx/conf.d
             - ./docker/logs/nginx:/var/log/nginx
@@ -21,7 +21,7 @@ services:
         container_name: massage_parlor_php
         restart: unless-stopped
         networks:
-            - webstack_default
+            - docker_default
         volumes:
             - ./:/var/www:rw
 
@@ -37,7 +37,7 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - webstack_default
+            - docker_default
         volumes:
             - database_data:/var/lib/mysql:rw
 
@@ -51,7 +51,7 @@ services:
         tty: true
 
 networks:
-    webstack_default:
+    docker_default:
         external: true
 
 volumes:
