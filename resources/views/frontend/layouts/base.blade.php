@@ -39,13 +39,7 @@
                 <div class="header-delim"></div>
                 <div class="header-bottom">
                     <div class="header-menu">
-                        <a href="">Главная</a>
-                        <a href="">Услуги</a>
-                        <a href="">Продукция</a>
-                        <a href="">Доставка</a>
-                        <a href="">Отзывы</a>
-                        <a href="">Команда</a>
-                        <a href="">Контакты</a>
+                        @widget('app.frontend.widgets.menu')
                     </div>
                 </div>
             </div>
@@ -60,13 +54,7 @@
                 <a href="" class="link-item instagram"></a>
             </div>
             <div class="footer-menu">
-                <a href="">Главная</a>
-                <a href="">Услуги</a>
-                <a href="">Продукция</a>
-                <a href="">Доставка</a>
-                <a href="">Отзывы</a>
-                <a href="">Команда</a>
-                <a href="">Контакты</a>
+                @widget('app.frontend.widgets.menu')
             </div>
             <div class="footer-agreement">
                 <a href="">Пользовательское соглашение</a>

@@ -212,6 +212,11 @@ return [
         App\Admin\Components\Fields\Providers\ComponentProvider::class,
         App\Admin\Components\Files\Providers\ComponentProvider::class,
 
+        /*
+         * Frontend Application Providers
+         */
+        App\Frontend\Components\Menu\Providers\ComponentProvider::class,
+
     ],
 
     /*
