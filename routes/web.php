@@ -71,6 +71,10 @@ Route::get('/', function () {
     return view('frontend.index.index');
 });
 
+Route::get('/files/download/{id}', function ($id) {
+    // @todo: implement
+})->name('files.download');
+
 /* drafts */
 
 Route::get('/drafts/services', function () {

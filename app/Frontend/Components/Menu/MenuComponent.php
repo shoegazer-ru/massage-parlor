@@ -2,21 +2,21 @@
 
 namespace App\Frontend\Components\Menu;
 
+use App\Components\ModelProvider\Interfaces\ModelProviderComponentInterface;
 use App\Frontend\Components\Menu\Interfaces\MenuComponentInterface;
 use App\Frontend\Components\Menu\Models\MenuWidget;
-use App\Repositories\SectionRepository;
 
 class MenuComponent implements MenuComponentInterface
 {
     /**
-     * @var SectionRepository
+     * @var ModelProviderComponentInterface
      */
-    protected SectionRepository $sectionRepository;
+    protected ModelProviderComponentInterface $modelProvider;
 
     public function __construct(
-        SectionRepository $sectionRepository
+        ModelProviderComponentInterface $modelProvider
     ) {
-        $this->sectionRepository = $sectionRepository;
+        $this->modelProvider = $modelProvider;
     }
 
     /**
@@ -24,9 +24,10 @@ class MenuComponent implements MenuComponentInterface
      */
     public function getMenuWidget(): MenuWidget
     {
-        $sections = $this->sectionRepository->getList([
-            'parent_id' => null
+        $sections = $this->modelProvider->getList('section', [
+            'filter' => ['parent_id' => null]
         ]);
+
         $widget = new MenuWidget($sections);
 
         return $widget;

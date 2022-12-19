@@ -203,6 +203,11 @@ return [
         Components\DataObjectManager\Providers\ComponentProvider::class,
 
         /*
+         * App Components Providers
+         */
+        App\Components\ModelProvider\Providers\ComponentProvider::class,
+
+        /*
          * Admin Application Providers
          */
         App\Admin\Components\Auth\Providers\ComponentProvider::class,

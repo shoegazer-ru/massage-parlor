@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Frontend\Components\Menu\Providers;
+namespace App\Components\ModelProvider\Providers;
 
 use App\Components\ModelProvider\Interfaces\ModelProviderComponentInterface;
-use App\Frontend\Components\Menu\Interfaces\MenuComponentInterface;
-use App\Frontend\Components\Menu\MenuComponent;
+use App\Components\ModelProvider\ModelProviderComponent;
+use App\Repositories\RepositoryProvider;
 use Illuminate\Support\ServiceProvider;
 
 class ComponentProvider extends ServiceProvider
@@ -24,9 +24,9 @@ class ComponentProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton(MenuComponentInterface::class, function ($app) {
-            return new MenuComponent(
-                $app->make(ModelProviderComponentInterface::class)
+        $this->app->singleton(ModelProviderComponentInterface::class, function ($app) {
+            return new ModelProviderComponent(
+                $app->make(RepositoryProvider::class)
             );
         });
     }

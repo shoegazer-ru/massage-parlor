@@ -2,8 +2,7 @@
 
 namespace App\Frontend\Components\Menu\Models;
 
-use App\Models\Section;
-use Illuminate\Database\Eloquent\Collection;
+use App\Components\ModelProvider\Models\ModelItem;
 
 /**
  * [Description Model]
@@ -11,12 +10,12 @@ use Illuminate\Database\Eloquent\Collection;
 class MenuWidget
 {
     /**
-     * @var Collection
+     * @var ModelItem[]
      */
-    public Collection $sections;
+    public array $sections;
 
     public function __construct(
-        Collection $sections
+        array $sections
     ) {
         $this->sections = $sections;
     }
