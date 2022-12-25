@@ -70,6 +70,24 @@ class ModelProviderComponent implements ModelProviderComponentInterface
     }
 
     /**
+     * @param ModelItem[] $models
+     * @param string $field
+     * 
+     * @return array
+     */
+    public function getModelsField(array $models, string $field): array
+    {
+        $values = [];
+        foreach ($models as $model) {
+            $values[] = $model->model->getAttribute($field);
+        }
+
+        return $values;
+    }
+
+    /* HELPERS */
+
+    /**
      * @param string $modelName
      * 
      * @return AbstractRepository
@@ -176,10 +194,10 @@ class ModelProviderComponent implements ModelProviderComponentInterface
             $file = $files[$reference->file_id];
             switch ($file->type) {
                 case File::TYPE_FILE:
-                    $itemsFiles[$reference->model_id][$file->type] = $this->buildFile($file, $reference);
+                    $itemsFiles[$reference->model_id][$file->type][] = $this->buildFile($file, $reference);
                     break;
                 case File::TYPE_IMAGE:
-                    $itemsFiles[$reference->model_id][$file->type] = $this->buildImage($file, $reference);
+                    $itemsFiles[$reference->model_id][$file->type][] = $this->buildImage($file, $reference);
                     break;
             }
         }
@@ -190,6 +208,7 @@ class ModelProviderComponent implements ModelProviderComponentInterface
     protected function buildFile(File $file, FileReference $fileReference): ModelFile
     {
         return new ModelFile(
+            $file->id,
             $file->name,
             $file->ext,
             route('files.download', ['id' => $file->id]) // @todo: сделать абстрактный построитель урлов
@@ -199,6 +218,7 @@ class ModelProviderComponent implements ModelProviderComponentInterface
     protected function buildImage(File $file, FileReference $fileReference): ModelImage
     {
         return new ModelImage(
+            $file->id,
             $file->name,
             $file->ext,
             asset('/uploads/images/big/' . substr($file->hash, 0, 2) . '/' . $file->hash . '.' . $file->ext), // @todo: абстрактный построитель урлов + абстрактный построитель урлов до файлов

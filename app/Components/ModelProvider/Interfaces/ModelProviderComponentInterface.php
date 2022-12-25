@@ -25,4 +25,12 @@ interface ModelProviderComponentInterface
      * @return ModelItem
      */
     public function getItem(string $modelName, array $criteria = [], array $references = []): ModelItem;
+
+    /**
+     * @param ModelItem[] $models
+     * @param string $field
+     * 
+     * @return array
+     */
+    public function getModelsField(array $models, string $field): array;
 }

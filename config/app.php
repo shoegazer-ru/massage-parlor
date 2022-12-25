@@ -221,6 +221,7 @@ return [
          * Frontend Application Providers
          */
         App\Frontend\Components\Menu\Providers\ComponentProvider::class,
+        App\Frontend\Components\Products\Providers\ComponentProvider::class,
 
     ],
 

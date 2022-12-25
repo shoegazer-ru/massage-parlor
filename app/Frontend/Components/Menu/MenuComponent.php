@@ -32,4 +32,20 @@ class MenuComponent implements MenuComponentInterface
 
         return $widget;
     }
+
+    /**
+     * @param int $parentId
+     * 
+     * @return MenuWidget
+     */
+    public function getSubmenuWidget(int $parentId): MenuWidget
+    {
+        $sections = $this->modelProvider->getList('section', [
+            'filter' => ['parent_id' => $parentId]
+        ]);
+
+        $widget = new MenuWidget($sections);
+
+        return $widget;
+    }
 }
